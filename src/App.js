@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import NavBar from './components/NavBar';
+import BusinessList from './components/BusinessList';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { Yelp } from './util/Yelp';
+//import './styles.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      businesses: [],
+      latitude: null,
+      longitude: null
+    };
+  }
+
+  componentDidMount() {
+    this.position();
+  }
+
+  async position() {
+    await navigator.geolocation.getCurrentPosition(position => {
+      this.setState({latitude: position.coords.latitude})
+      this.setState({latitude: position.coords.longitude})
+      console.log("Coordinates: " + this.state.latitude + " " + this.state.longitude);
+      Yelp(position.coords.latitude, position.coords.longitude).then(businesses => {
+        this.setState({ 
+          businesses: businesses
+        })
+      });
+    })
+  }
+
+  render() {
+    return (
+      <div className="app">
+        <Header>pick for me</Header>
+        <NavBar userInputYelpSearch={ this.searchYelp } />
+        <BusinessList businesses={ this.state.businesses } />
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
