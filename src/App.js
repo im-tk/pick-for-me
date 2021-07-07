@@ -23,7 +23,7 @@ class App extends Component {
   async position() {
     await navigator.geolocation.getCurrentPosition(position => {
       this.setState({latitude: position.coords.latitude})
-      this.setState({latitude: position.coords.longitude})
+      this.setState({longitude: position.coords.longitude})
       console.log("Coordinates: " + this.state.latitude + " " + this.state.longitude);
       Yelp(position.coords.latitude, position.coords.longitude).then(businesses => {
         this.setState({ 
@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <div className="app">
         <Header>pick for me</Header>
-        <NavBar userInputYelpSearch={ this.searchYelp } />
+        <NavBar Yelp={ this.searchYelp } />
         <BusinessList businesses={ this.state.businesses } />
         <Footer />
       </div>

@@ -27,7 +27,7 @@ class NavBar extends Component  {
       this.setState({error: 'Please enter a location.'});
     } else {
       this.setState({error: ''});
-      this.props.userInputYelpSearch();
+      //this.props.userInputYelpSearch();
       e.preventDefault(); 
     }
   }
