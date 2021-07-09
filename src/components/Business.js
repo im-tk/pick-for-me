@@ -5,7 +5,7 @@ const dot = String.fromCharCode(8901);
 
 export class Business extends Component {
   starRating(rating) {
-    switch(this.props.business.rating) {
+    switch(rating) {
       case 1:
           return <span>{star}</span>;
       case 1.5:
@@ -37,18 +37,16 @@ export class Business extends Component {
         </div>
         <div className="business-info">
             <p id="business-name">{ this.props.business.name }</p>
-            <p class="details">
+            <p className="details">
               <span>
-                { this.props.business.rating + " " }
-                { this.starRating(this.props.business.rating)}
-                { " " + dot + " "}
-                { this.props.business.reviewCount } reviews
-                </span>
+                { this.props.business.rating } { this.starRating(this.props.business.rating) } ({ this.props.business.reviewCount })
+                { " " + dot + " " }
+                { this.props.business.category[0].title }
+              </span>
             </p>
-            <p>{ this.props.business.category[0].title }</p>
-            <p>{ this.props.business.phone }</p> 
             <p>{ this.props.business.address }</p>
             <p>{ this.props.business.city }, { this.props.business.state } { this.props.business.zipCode }</p>
+            <p>{ this.props.business.phone }</p> 
         </div>
       </div>
     );

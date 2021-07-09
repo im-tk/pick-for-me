@@ -23,13 +23,12 @@ class NavBar extends Component  {
   }
 
   handleSearch(e) {
-    if(this.state.location === '') {
+    /*if(this.state.location === '') {
       this.setState({error: 'Please enter a location.'});
     } else {
       this.setState({error: ''});
-      //this.props.userInputYelpSearch();
       e.preventDefault(); 
-    }
+    }*/
   }
 
   handleEnterKey(e) {
@@ -43,11 +42,11 @@ class NavBar extends Component  {
       <div className="search-bar-container">
         <span className="search-bar-fields">
           <input 
-            placeholder="I'm hungry for..." 
+            placeholder="" 
             onChange={ this.handleTermChange }
             onKeyPress={ this.handleEnterKey } />
           <input 
-            placeholder="Near..." 
+            placeholder="Location" 
             onChange={ this.handleLocationChange }
             onKeyPress={ this.handleEnterKey } 
             />

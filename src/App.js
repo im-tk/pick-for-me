@@ -11,26 +11,43 @@ class App extends Component {
     super(props);
     this.state = {
       businesses: [],
-      latitude: null,
-      longitude: null
+      userLatitude: null,
+      userLongitude: null
     };
+    this.shuffleBusinesses = this.shuffleBusinesses.bind(this);
   }
 
   componentDidMount() {
     this.position();
   }
 
+  /* Requests Geolocation from user */
   async position() {
     await navigator.geolocation.getCurrentPosition(position => {
-      this.setState({latitude: position.coords.latitude})
-      this.setState({longitude: position.coords.longitude})
-      console.log("Coordinates: " + this.state.latitude + " " + this.state.longitude);
-      Yelp(position.coords.latitude, position.coords.longitude).then(businesses => {
+      this.setState({userLatitude: position.coords.latitude})
+      this.setState({userLongitude: position.coords.longitude})
+
+      Yelp(this.state.userLatitude, this.state.userLongitude).then(businesses => {
         this.setState({ 
           businesses: businesses
         })
+        //console.log("######" + this.state.businesses[0].name); //returns restaurant name
+        this.shuffleBusinesses();
       });
     })
+  }
+
+  /* Randomizes business list */
+  shuffleBusinesses() {
+    let shuffle = this.state.businesses;
+
+    for(let i = shuffle.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * i)
+      let temp = shuffle[i];
+      shuffle[i] = shuffle[j];
+      shuffle[j] = temp;
+    }
+    this.setState({businesses: shuffle});
   }
 
   render() {
