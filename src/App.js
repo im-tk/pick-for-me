@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './components/NavBar';
-import BusinessList from './components/BusinessList';
+import { Business } from './components/Business';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { Yelp } from './util/Yelp';
@@ -11,10 +11,14 @@ class App extends Component {
     super(props);
     this.state = {
       businesses: [],
+      count: 0,
       userLatitude: null,
       userLongitude: null
     };
     this.shuffleBusinesses = this.shuffleBusinesses.bind(this);
+    this.position = this.position.bind(this);
+    this.buttonNext = this.buttonNext.bind(this);
+    this.buttonBack = this.buttonBack.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +28,7 @@ class App extends Component {
   /* Requests Geolocation from user */
   async position() {
     await navigator.geolocation.getCurrentPosition(position => {
+      console.log("Received Geolocation");
       this.setState({userLatitude: position.coords.latitude})
       this.setState({userLongitude: position.coords.longitude})
 
@@ -31,7 +36,6 @@ class App extends Component {
         this.setState({ 
           businesses: businesses
         })
-        //console.log("######" + this.state.businesses[0].name); //returns restaurant name
         this.shuffleBusinesses();
       });
     })
@@ -50,12 +54,37 @@ class App extends Component {
     this.setState({businesses: shuffle});
   }
 
+  /* Updates counter to go to the next index in the businesses[] array */
+  buttonNext() {
+    if(this.state.count >= this.state.businesses.length - 1) {
+      this.setState({count: 0})
+    }
+    else {
+      this.setState(prevState => {
+        return {count: prevState.count + 1}
+      })
+    }
+  }
+
+  /* Updates counter to go to the previous index in the businesses[] array */
+  buttonBack() {
+    if(this.state.count === 0) {
+      this.setState({count: this.state.businesses.length - 1})
+    }
+    else {
+      this.setState(prevState => {
+        return {count: prevState.count - 1}
+      })
+    }
+  }
+
   render() {
+    console.log("Render in App.js");
     return (
       <div className="app">
         <Header>pick for me</Header>
-        <NavBar Yelp={ this.searchYelp } />
-        <BusinessList businesses={ this.state.businesses } />
+        <NavBar buttonNext={ this.buttonNext } buttonBack={ this.buttonBack } />
+        <Business business={ this.state.businesses } count={ this.state.count } />
         <Footer />
       </div>
     );
