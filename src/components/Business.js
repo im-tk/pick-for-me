@@ -46,7 +46,7 @@ export class Business extends Component {
                 <span>
                   { this.props.business[this.props.count].rating } { this.starRating(this.props.business[this.props.count].rating) } ({ this.props.business[this.props.count].reviewCount })
                   { " " + dot + " " }
-                  
+                  { this.props.business[this.props.count].category[0].title }
                 </span>
               </p>
               <p>{ this.props.business[this.props.count].address }</p>
@@ -57,7 +57,8 @@ export class Business extends Component {
       );
     }
     else {
-      return (<div></div>); //Renders nothing if business info is not avail
+      return (<div></div>); //Renders nothing if business info
     }
   }
 };
+// { this.props.business.category[0].title }
