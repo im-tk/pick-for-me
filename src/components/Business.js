@@ -41,12 +41,10 @@ export class Business extends Component {
             <img src={ this.props.business.imageSRC } alt=''/>
           </div>
           <div className="business-info">
-              <p id="business-name">{ this.props.business.name }</p>
+              <h1 className="business-name"><a href={ this.props.business.url } target="_blank" >{ this.props.business.name }</a></h1>
               <p className="details">
                 <span>
-                  { this.props.business.rating } { this.starRating(this.props.business.rating) } ({ this.props.business.reviewCount })
-                  { " " + dot + " " }
-                  { this.props.business.category[0].title }
+                  { this.props.business.rating } { this.starRating(this.props.business.rating) } ({ this.props.business.reviewCount }) { " " + dot + " " + this.props.business.category[0].title}
                 </span>
               </p>
               <p>{ this.props.business.address }</p>

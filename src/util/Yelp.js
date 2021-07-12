@@ -1,6 +1,6 @@
-const apiKey = '';
+const apiKey = 'YOUR_API_KEY';
 
-const Yelp = function(latitude, longitude) {
+const yelpSearch = function(latitude, longitude) {
   return fetch(
     `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food&latitude=${latitude}&longitude=${longitude}&radius=16000&open_now=true`, {
     headers: {
@@ -12,7 +12,6 @@ const Yelp = function(latitude, longitude) {
     if(jsonResponse.businesses) {        
       return jsonResponse.businesses.map(business => {    
         console.log(JSON.stringify(jsonResponse));
-        //console.log(business.categories);
         return { 
           id: business.id,
           imageSRC: business.image_url,
@@ -26,11 +25,11 @@ const Yelp = function(latitude, longitude) {
           reviewCount: business.review_count,
           coordinates: business.coordinates,
           phone: business.display_phone,
+          url: business.url
         }
       })
     }
   }).catch(error => console.log(error));  
 };
 
-export { Yelp };
-  
+export default yelpSearch;

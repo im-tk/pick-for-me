@@ -4,7 +4,7 @@ import NavBar from './components/NavBar';
 import { Business } from './components/Business';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { Yelp } from './util/Yelp';
+import yelpSearch from './util/Yelp';
 import shuffleArray from './util/shuffleArray';
 import nextArrayItem from './util/nextArrayItem';
 import prevArrayItem from './util/prevArrayItem';
@@ -35,7 +35,7 @@ class App extends Component {
       this.setState({userLatitude: position.coords.latitude})
       this.setState({userLongitude: position.coords.longitude})
 
-      Yelp(this.state.userLatitude, this.state.userLongitude).then(businesses => {
+      yelpSearch(this.state.userLatitude, this.state.userLongitude).then(businesses => {
         this.setState({businesses: shuffleArray(businesses)});
       });
     })
