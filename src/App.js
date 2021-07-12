@@ -80,11 +80,12 @@ class App extends Component {
 
   render() {
     console.log("Render in App.js");
+    //console.log(this.state.businesses[this.state.count]);
     return (
       <div className="app">
         <Header>pick for me</Header>
         <NavBar buttonNext={ this.buttonNext } buttonBack={ this.buttonBack } />
-        <Business business={ this.state.businesses } count={ this.state.count } />
+        <Business business={ this.state.businesses[this.state.count] } />
         <Footer />
       </div>
     );

@@ -34,24 +34,24 @@ export class Business extends Component {
 
   render() {
     /* Renders business info */
-    if(this.props.business.length > 0) {
+    if(this.props.business != null) {
       return (
         <div className="business-container">
           <div className="business-image">
-            <img src={ this.props.business[this.props.count].imageSRC } alt=''/>
+            <img src={ this.props.business.imageSRC } alt=''/>
           </div>
           <div className="business-info">
-              <p id="business-name">{ this.props.business[this.props.count].name }</p>
+              <p id="business-name">{ this.props.business.name }</p>
               <p className="details">
                 <span>
-                  { this.props.business[this.props.count].rating } { this.starRating(this.props.business[this.props.count].rating) } ({ this.props.business[this.props.count].reviewCount })
+                  { this.props.business.rating } { this.starRating(this.props.business.rating) } ({ this.props.business.reviewCount })
                   { " " + dot + " " }
-                  { this.props.business[this.props.count].category[0].title }
+                  { this.props.business.category[0].title }
                 </span>
               </p>
-              <p>{ this.props.business[this.props.count].address }</p>
-              <p>{ this.props.business[this.props.count].city }, { this.props.business[this.props.count].state } { this.props.business[this.props.count].zipCode }</p>
-              <p>{ this.props.business[this.props.count].phone }</p> 
+              <p>{ this.props.business.address }</p>
+              <p>{ this.props.business.city }, { this.props.business.state } { this.props.business.zipCode }</p>
+              <p>{ this.props.business.phone }</p> 
           </div>
         </div>
       );
@@ -61,4 +61,3 @@ export class Business extends Component {
     }
   }
 };
-// { this.props.business.category[0].title }
