@@ -1,4 +1,4 @@
-const apiKey = 'YOUR_API_KEY';
+const apiKey = 'yFNZrreHtxAFwQWtArikXPWkpQIRoaNRtyf6RFD8NCDSRV9UrOQmMC4yOO-XS4M1MQH7Mk33477Yp17lPU4dRzUEmLIvswvNixCmp4mKNps1SSpQ5gAOUchZp_6mW3Yx';
 
 const yelpSearch = function(latitude, longitude) {
   return fetch(

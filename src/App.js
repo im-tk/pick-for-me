@@ -4,7 +4,7 @@ import NavBar from './components/NavBar';
 import { Business } from './components/Business';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import yelpSearch from './util/Yelp';
+import yelpSearch from './util/yelpSearch';
 import shuffleArray from './util/shuffleArray';
 import nextArrayItem from './util/nextArrayItem';
 import prevArrayItem from './util/prevArrayItem';
@@ -44,7 +44,6 @@ class App extends Component {
   /* Updates counter to go to the next index in the businesses[] array */
   buttonNext() {
     this.setState({count: nextArrayItem(this.state.count, this.state.businesses.length)});
-    console.log(this.state.count);
   }
 
   /* Updates counter to go to the previous index in the businesses[] array */
@@ -58,7 +57,6 @@ class App extends Component {
         <Header>pick for me</Header>
         <NavBar buttonNext={ this.buttonNext } buttonBack={ this.buttonBack } />
         <Business business={ this.state.businesses[this.state.count] } />
-
         <Footer />
       </div>
     );
