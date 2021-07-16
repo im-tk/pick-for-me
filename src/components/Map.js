@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import GoogleMapReact from 'google-map-react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const apiKey = 'AIzaSyBc8B8R5yQnEK39s3YEAh8KKfUo7zsx9ZI';

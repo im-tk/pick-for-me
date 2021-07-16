@@ -49,7 +49,8 @@ export class Business extends Component {
               </p>
               <p>{ this.props.business.address }</p>
               <p>{ this.props.business.city }, { this.props.business.state } { this.props.business.zipCode }</p>
-              <p>{ this.props.business.phone }</p> 
+              <p>{ this.props.business.phone }</p>
+              <p>{ this.props.business.distance } miles away</p>
           </div>
         </div>
       );

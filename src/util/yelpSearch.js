@@ -1,3 +1,5 @@
+import getDistanceBetween from './getDistanceBetween';
+
 const apiKey = 'yFNZrreHtxAFwQWtArikXPWkpQIRoaNRtyf6RFD8NCDSRV9UrOQmMC4yOO-XS4M1MQH7Mk33477Yp17lPU4dRzUEmLIvswvNixCmp4mKNps1SSpQ5gAOUchZp_6mW3Yx';
 
 const yelpSearch = function(latitude, longitude) {
@@ -25,7 +27,8 @@ const yelpSearch = function(latitude, longitude) {
           reviewCount: business.review_count,
           coordinates: business.coordinates,
           phone: business.display_phone,
-          url: business.url
+          url: business.url,
+          distance: getDistanceBetween(latitude, longitude, business.coordinates.latitude, business.coordinates.longitude)
         }
       })
     }
