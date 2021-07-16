@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import NavBar from './components/NavBar';
-//import Map from './components/Map';
 import { Business } from './components/Business';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Map from './components/Map';
 import yelpSearch from './util/yelpSearch';
 import shuffleArray from './util/shuffleArray';
 import nextArrayItem from './util/nextArrayItem';
@@ -16,6 +16,7 @@ class App extends Component {
     this.state = {
       businesses: [],
       count: 0,
+      userCoords: null,
       userLatitude: null,
       userLongitude: null
     };
@@ -57,6 +58,7 @@ class App extends Component {
         <Header>pick for me</Header>
         <NavBar buttonNext={ this.buttonNext } buttonBack={ this.buttonBack } />
         <Business business={ this.state.businesses[this.state.count] } />
+        <Map origin={{ lat: this.state.userLatitude, lng: this.state.userLongitude }} business={ this.state.businesses[this.state.count] } />
         <Footer />
       </div>
     );
