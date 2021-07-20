@@ -1,10 +1,10 @@
 import getDistanceBetween from './getDistanceBetween';
 
-const apiKey = 'yFNZrreHtxAFwQWtArikXPWkpQIRoaNRtyf6RFD8NCDSRV9UrOQmMC4yOO-XS4M1MQH7Mk33477Yp17lPU4dRzUEmLIvswvNixCmp4mKNps1SSpQ5gAOUchZp_6mW3Yx';
+const apiKey = 'YOUR_API_KEY';
 
 const yelpSearch = function(latitude, longitude) {
   return fetch(
-    `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food&latitude=${latitude}&longitude=${longitude}&radius=16000&open_now=true`, {
+    `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food&latitude=${latitude}&longitude=${longitude}&radius=16000&open_now=true&limit=50`, {
     headers: {
       Authorization: `Bearer ${apiKey}` 
     }
@@ -28,6 +28,7 @@ const yelpSearch = function(latitude, longitude) {
           coordinates: business.coordinates,
           phone: business.display_phone,
           url: business.url,
+          price: business.price,
           distance: getDistanceBetween(latitude, longitude, business.coordinates.latitude, business.coordinates.longitude)
         }
       })
