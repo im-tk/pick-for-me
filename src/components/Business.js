@@ -9,10 +9,7 @@ export class Business extends Component {
 
   priceToString(price) {
     console.log("!!!! PRICE: " + price);
-    if(price == undefined) { //If price data isn't available, don't show anything
-      return;
-    }
-    return(" " + dot + " " + price);
+    return(price == undefined ? '' : " " + dot + " " + price);
   }
 
   render() {

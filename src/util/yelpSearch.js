@@ -1,6 +1,6 @@
 import getDistanceBetween from './getDistanceBetween';
 
-const apiKey = 'YOUR_API_KEY';
+const apiKey = 'xDJWpuQa58rPeRwOZuHEBrtxYhY840BncQog7PScyURxqsneh-twMJ5pRPbYwqrXD5fcoGxRU-yENsUQcwkHB4rMQlRrmeNKZFBI8N-kJY4PvEGqXSbuKaB5yjr1YHYx';
 
 const yelpSearch = function(latitude, longitude) {
   return fetch(
@@ -14,6 +14,7 @@ const yelpSearch = function(latitude, longitude) {
     if(jsonResponse.businesses) {        
       return jsonResponse.businesses.map(business => {    
         console.log(JSON.stringify(jsonResponse));
+        console.log(business.price);
         return { 
           id: business.id,
           imageSRC: business.image_url,
