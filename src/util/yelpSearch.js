@@ -1,6 +1,6 @@
 import getDistanceBetween from './getDistanceBetween';
 
-const apiKey = 'xDJWpuQa58rPeRwOZuHEBrtxYhY840BncQog7PScyURxqsneh-twMJ5pRPbYwqrXD5fcoGxRU-yENsUQcwkHB4rMQlRrmeNKZFBI8N-kJY4PvEGqXSbuKaB5yjr1YHYx';
+const apiKey = 'YOUR_API_KEY';
 
 const yelpSearch = function(latitude, longitude) {
   return fetch(
@@ -24,8 +24,6 @@ const yelpSearch = function(latitude, longitude) {
           state: business.location.state,
           zipCode: business.location.zip_code,
           category: business.categories,
-          rating: business.rating,
-          reviewCount: business.review_count,
           coordinates: business.coordinates,
           phone: business.display_phone,
           url: business.url,

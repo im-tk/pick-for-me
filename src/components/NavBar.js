@@ -9,15 +9,11 @@ class NavBar extends Component  {
   render() {
     return (
       <div className="navbar-container">
-        <span 
-          className="navbar-button"
-          onClick={ this.props.buttonBack }>
-            <button type="button">Back</button></span>
+        <span onClick={ this.props.buttonBack }>
+            <button className="navbar-button" type="button">Back</button></span>
 
-        <span 
-          className="navbar-button" 
-          onClick={ this.props.buttonNext }>
-            <button type="button">Next</button></span>
+        <span onClick={ this.props.buttonNext }>
+            <button className="navbar-button" type="button">Next</button></span>
       </div>
     );
   };

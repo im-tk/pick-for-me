@@ -1,0 +1,25 @@
+html, body {
+  margin: 0;
+  padding: 0px;
+  font-family: sans-serif;
+}
+
+html .navbar-container, body .navbar-container {
+  width: 1000px;
+  font-size: 30px;
+}
+
+html .navbar-container .navbar-button, body .navbar-container .navbar-button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=styles.css.map */
