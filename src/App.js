@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavBar from './components/NavBar';
 import { Business } from './components/Business';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -8,7 +7,7 @@ import yelpSearch from './util/yelpSearch';
 import shuffleArray from './util/shuffleArray';
 import nextArrayItem from './util/nextArrayItem';
 import prevArrayItem from './util/prevArrayItem';
-//import './styles.css';
+import './styles/styles.css';
 
 class App extends Component {
   constructor(props) {
@@ -54,10 +53,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div className="app-container">
         <Header>pick for me</Header>
-        <NavBar buttonNext={ this.buttonNext } buttonBack={ this.buttonBack } />
-        <Business business={ this.state.businesses[this.state.count] } />
+        <Business business={ this.state.businesses[this.state.count] } buttonBack={ this.buttonBack } buttonNext={ this.buttonNext }/>
         <Map origin={{ lat: this.state.userLatitude, lng: this.state.userLongitude }} business={ this.state.businesses[this.state.count] } />
         <Footer />
       </div>

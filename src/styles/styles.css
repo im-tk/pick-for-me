@@ -4,13 +4,27 @@ html, body {
   font-family: sans-serif;
 }
 
-html .navbar-container, body .navbar-container {
-  width: 1000px;
-  font-size: 30px;
+html .app-container, body .app-container {
+  width: 100%;
 }
 
-html .navbar-container .navbar-button, body .navbar-container .navbar-button {
-  background-color: black;
+html .app-container .business-container, body .app-container .business-container {
+  font-size: 30px;
+  background: skyblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html .app-container .business-container .nav-btn, body .app-container .business-container .nav-btn {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
   border: none;
   color: white;
   padding: 15px 32px;

@@ -1,6 +1,6 @@
 import getDistanceBetween from './getDistanceBetween';
 
-const apiKey = 'YOUR_API_KEY';
+const apiKey = 'VCrGnyLAcxHT3choQte8NpU6S-mPggKPMKyrldqbwRb-zGrcOv1ANAZnqJ939KeCtNYrmk8CsFvCWTOFzMBhbkKFSHfgGNnTvmY6f0lnIRReHcNzvYZxnI0hOoP8YHYx';
 
 const yelpSearch = function(latitude, longitude) {
   return fetch(

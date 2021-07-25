@@ -2,21 +2,29 @@ html, body {
   margin: 0;
   padding: 0px;
   font-family: sans-serif;
-  .navbar-container {
-      width: 1000px;
-      font-size: 30px;
-    .navbar-button {
-      background-color:black;
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-      border-radius: 10px;
+  .app-container {
+    width: 100%;
+
+    .business-container {
+        font-size: 30px;
+        background: skyblue;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+      .nav-btn {
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+      }
     }
   }
 }
