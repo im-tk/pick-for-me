@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Montserrat");
 html, body {
   margin: 0;
   padding: 0px;
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 html .app-container, body .app-container {
@@ -32,7 +33,7 @@ html .app-container .biz-container .biz-btn, body .app-container .biz-container 
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 0;
   cursor: pointer;
   border-radius: 10px;
 }
@@ -51,9 +52,14 @@ html .app-container .biz-container .biz-info .biz-name, body .app-container .biz
   word-wrap: break-word;
 }
 
-html .footer, body .footer {
-  font-size: 0.8rem;
-  padding: 20px;
+html .header-container, body .header-container {
+  margin: 0;
+  padding: 0 2rem;
+  font-size: 1rem;
+  font-family: 'Roboto Slab', Garamond, serif;
+}
+
+html .footer-container, body .footer-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,15 +70,17 @@ html .footer, body .footer {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 0;
+  padding: 20px;
+  font-size: 0.8rem;
 }
 
-html .footer a, body .footer a {
+html .footer-container a, body .footer-container a {
   text-decoration: none;
   color: #6e8efb;
-  font-weight: 600;
 }
 
-html .footer a:hover, body .footer a:hover {
+html .footer-container a:hover, body .footer-container a:hover {
   color: #a777e3;
 }
 /*# sourceMappingURL=styles.css.map */

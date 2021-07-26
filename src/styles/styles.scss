@@ -1,8 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Montserrat");
+
+$colors: (
+  primary: #6e8efb,
+  secondary: #a777e3
+);
+
+@function getColor($color) {
+  @return map-get($colors, $color);
+}
+
 html, body {
   margin: 0;
   padding: 0px;
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
 
   .app-container {
     width: 100%;
@@ -15,14 +26,14 @@ html, body {
         justify-content: center;
 
       .biz-btn {
-        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        background: linear-gradient(135deg, getColor(primary), getColor(secondary));
         border: none;
         color: white;
-        padding: 15px 32px;
+        padding: 15px 32px; //size of button
         text-align: center;
         text-decoration: none;
         font-size: 16px;
-        margin: 4px 2px;
+        margin: 0; //keep it next to element
         cursor: pointer;
         border-radius: 10px;
       }
@@ -40,18 +51,27 @@ html, body {
       }
     }
   }
-  .footer {
-    font-size: 0.8rem;
-    padding: 20px;
+
+  .header-container {
+    margin: 0;
+    padding: 0 2rem;
+    font-size: 1rem;
+    font-family: 'Roboto Slab', Garamond, serif;
+  }
+
+  .footer-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 0;
+    padding: 20px;
+    font-size: 0.8rem;
+
     a { 
       text-decoration: none;
-      color:#6e8efb;
-      font-weight: 600;
+      color:getColor(primary);
       &:hover{
-        color: #a777e3;
+        color: getColor(secondary);
       }
     }
   }
