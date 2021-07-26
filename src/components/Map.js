@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-const apiKey = 'AIzaSyAltMNCr8kT33VG9qfRPANR3kobPtkeAYc';
-
 const styles = {
   width: '100%',
   height: '800px'
@@ -22,7 +20,7 @@ class Map extends Component {
     if(this.props.business != null) {
       return (
         <div className="map-container">
-          <LoadScript googleMapsApiKey={ apiKey }>
+          <LoadScript googleMapsApiKey={ process.env.REACT_APP_GOOGLE_API_KEY }>
             <GoogleMap
               mapContainerStyle={ styles }
               center={ this.props.origin }

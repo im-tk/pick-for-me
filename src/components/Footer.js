@@ -4,9 +4,7 @@ class Footer extends Component {
   render() {
     return (
       <div className="footer">
-        <p id="created-by">
-          created by <a className="link" href="http://github.com/im-tk" target="_window">@im-tk</a>
-        </p>
+          <span>created by <a href="http://github.com/im-tk" target="_window">@im-tk</a></span>
       </div>
     );
   }

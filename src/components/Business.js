@@ -9,21 +9,19 @@ export class Business extends Component {
   }
 
   priceToString(price) {
-    console.log("!!!! PRICE: " + price);
-    return(price == undefined ? '' : " " + dot + " " + price);
+    return(price == undefined ? '' : " " + dot + " " + price); //only show price if there's a valid value
   }
 
   render() {
     /* Renders business info */
     if(this.props.business != null) {
       return (
-        <div className="business-container">
+        <div className="biz-container">
           <Button button={ this.props.buttonBack }>Back</Button>
-          <div className="business-info">
-            <div className="business-image">
-              <img src={ this.props.business.imageSRC } alt=''/></div>
-              <div className="business-name"><h1><a href={ this.props.business.url } target="_blank" >{ this.props.business.name }</a></h1></div>
-              <div className="business-details">
+          <div className="biz-info">
+              <img className="biz-image" src={ this.props.business.imageSRC } alt=''/>
+              <a className="biz-name" href={ this.props.business.url } target="_blank" ><h1>{ this.props.business.name }</h1></a>
+              <div className="biz-details">
                 <p>
                   { this.props.business.category[0].title} { this.priceToString(this.props.business.price) } 
                 </p>
