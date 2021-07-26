@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   padding: 0px;
+  font-size: 16px;
   font-family: sans-serif;
 }
 
@@ -8,8 +9,8 @@ html .app-container, body .app-container {
   width: 100%;
 }
 
-html .app-container .business-container, body .app-container .business-container {
-  font-size: 30px;
+html .app-container .biz-container, body .app-container .biz-container {
+  font-size: 1rem;
   background: skyblue;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,17 +24,55 @@ html .app-container .business-container, body .app-container .business-container
           justify-content: center;
 }
 
-html .app-container .business-container .nav-btn, body .app-container .business-container .nav-btn {
+html .app-container .biz-container .biz-btn, body .app-container .biz-container .biz-btn {
   background: linear-gradient(135deg, #6e8efb, #a777e3);
   border: none;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 10px;
+}
+
+html .app-container .biz-container .biz-info, body .app-container .biz-container .biz-info {
+  width: 500px;
+}
+
+html .app-container .biz-container .biz-info .biz-image, body .app-container .biz-container .biz-info .biz-image {
+  width: 500px;
+  height: 500px;
+}
+
+html .app-container .biz-container .biz-info .biz-name, body .app-container .biz-container .biz-info .biz-name {
+  font-size: 2rem;
+  word-wrap: break-word;
+}
+
+html .footer, body .footer {
+  font-size: 0.8rem;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html .footer a, body .footer a {
+  text-decoration: none;
+  color: #6e8efb;
+  font-weight: 600;
+}
+
+html .footer a:hover, body .footer a:hover {
+  color: #a777e3;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,29 +1,57 @@
 html, body {
   margin: 0;
   padding: 0px;
+  font-size: 16px;
   font-family: sans-serif;
+
   .app-container {
     width: 100%;
 
-    .business-container {
-        font-size: 30px;
+    .biz-container {
+        font-size: 1rem;
         background: skyblue;
         display: flex;
         flex-direction: row;
         justify-content: center;
 
-      .nav-btn {
+      .biz-btn {
         background: linear-gradient(135deg, #6e8efb, #a777e3);
         border: none;
         color: white;
         padding: 15px 32px;
         text-align: center;
         text-decoration: none;
-        display: inline-block;
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
         border-radius: 10px;
+      }
+
+      .biz-info {
+        width: 500px;
+        .biz-image {
+          width: 500px;
+          height: 500px;
+        }
+        .biz-name {
+          font-size: 2rem;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .footer {
+    font-size: 0.8rem;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    a { 
+      text-decoration: none;
+      color:#6e8efb;
+      font-weight: 600;
+      &:hover{
+        color: #a777e3;
       }
     }
   }
