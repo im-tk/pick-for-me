@@ -26,9 +26,7 @@ export class Business extends Component {
                   { this.props.business.category[0].title} { this.priceToString(this.props.business.price) } <br />
                 </span>
                 <span>
-                  { this.props.business.address } <br />
-                </span><span>
-                  { this.props.business.city }, { this.props.business.state } { this.props.business.zipCode } <br />
+                  { this.props.business.address }, { this.props.business.city }, { this.props.business.state } { this.props.business.zipCode } <br />
                   { this.props.business.phone } <br /><br />
                   about { this.props.business.distance } miles away
                 </span>

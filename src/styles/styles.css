@@ -11,6 +11,8 @@ html .app-container, body .app-container {
 }
 
 html .app-container .biz-container, body .app-container .biz-container {
+  z-index: 10;
+  position: absolute;
   font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -53,6 +55,7 @@ html .app-container .biz-container #biz-btn-next, body .app-container .biz-conta
 html .app-container .biz-container .biz-info, body .app-container .biz-container .biz-info {
   margin: 0;
   width: 450px;
+  background: white;
 }
 
 html .app-container .biz-container .biz-info .biz-image, body .app-container .biz-container .biz-info .biz-image {

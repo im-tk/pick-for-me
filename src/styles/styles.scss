@@ -19,8 +19,9 @@ html, body {
     width: 100%;
 
     .biz-container {
+      z-index: 10;
+      position: absolute;
       font-size: 1rem;
-      //background: skyblue; //remove later
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -54,6 +55,7 @@ html, body {
       .biz-info {
         margin: 0;
         width: 450px;
+        background: white; 
 
         .biz-image {
           width: 450px;
