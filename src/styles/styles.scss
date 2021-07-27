@@ -20,7 +20,7 @@ html, body {
 
     .biz-container {
         font-size: 1rem;
-        background: skyblue;
+        background: skyblue; //remove later
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -29,24 +29,46 @@ html, body {
         background: linear-gradient(135deg, getColor(primary), getColor(secondary));
         border: none;
         color: white;
-        padding: 15px 32px; //size of button
+        padding: 15px 32px;
+        height: 500px;
         text-align: center;
         text-decoration: none;
         font-size: 16px;
-        margin: 0; //keep it next to element
+        margin: 0; 
         cursor: pointer;
-        border-radius: 10px;
+      }
+
+      #biz-btn-back {
+        border-radius: 13px 0 0 13px;
+      }
+
+      #biz-btn-next {
+        border-radius: 0 13px 13px 0;
       }
 
       .biz-info {
-        width: 500px;
+        margin: 0;
+        width: 450px;
+
         .biz-image {
-          width: 500px;
-          height: 500px;
+          width: 450px;
+          height: 50%;
+          background: transparent no-repeat center;
+          background-size: cover;
+          vertical-align: middle;
+          padding: 0 0 1rem;
         }
+
         .biz-name {
-          font-size: 2rem;
+          padding: 1rem;
+          font-size: 1.5rem;
           word-wrap: break-word;
+          text-decoration: none;
+          font-weight: 600;
+        }
+
+        .biz-details {
+          padding: 1rem;
         }
       }
     }
@@ -64,12 +86,18 @@ html, body {
     flex-direction: row;
     justify-content: center;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
     font-size: 0.8rem;
 
     a { 
       text-decoration: none;
       color:getColor(primary);
+      font-weight: 700;
+
+      &:visited {
+        color:getColor(primary);
+      }
+      
       &:hover{
         color: getColor(secondary);
       }

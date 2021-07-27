@@ -1,8 +1,10 @@
 import getDistanceBetween from './getDistanceBetween';
 
+const baseURL = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food&radius=16000&open_now=true&limit=50';
+
 const yelpSearch = function(latitude, longitude) {
   return fetch(
-    `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=food&latitude=${latitude}&longitude=${longitude}&radius=16000&open_now=true&limit=50`, {
+    `${baseURL}&latitude=${latitude}&longitude=${longitude}`, {
     headers: {
       Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}` 
     }
@@ -11,8 +13,7 @@ const yelpSearch = function(latitude, longitude) {
   }).then(jsonResponse => {
     if(jsonResponse.businesses) {        
       return jsonResponse.businesses.map(business => {    
-        console.log(JSON.stringify(jsonResponse));
-        console.log(business.price);
+        //console.log(JSON.stringify(jsonResponse));
         return { 
           id: business.id,
           imageSRC: business.image_url,

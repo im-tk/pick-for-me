@@ -4,7 +4,7 @@ class Button extends Component  {
   render() {
     return (
         <span onClick={ this.props.button }>
-            <button type="button" className="biz-btn"> {this.props.children} </button></span>
+            <button type="button" id={this.props.id} className="biz-btn"> {this.props.children} </button></span>
     );
   };
 }
