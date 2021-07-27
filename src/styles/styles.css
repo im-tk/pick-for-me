@@ -12,7 +12,6 @@ html .app-container, body .app-container {
 
 html .app-container .biz-container, body .app-container .biz-container {
   font-size: 1rem;
-  background: skyblue;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,19 +22,24 @@ html .app-container .biz-container, body .app-container .biz-container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 500px;
 }
 
 html .app-container .biz-container .biz-btn, body .app-container .biz-container .biz-btn {
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  background: #6e8efb;
   border: none;
   color: white;
   padding: 15px 32px;
-  height: 500px;
+  height: 100%;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   margin: 0;
   cursor: pointer;
+}
+
+html .app-container .biz-container .biz-btn:hover, body .app-container .biz-container .biz-btn:hover {
+  background: #7c99fb;
 }
 
 html .app-container .biz-container #biz-btn-back, body .app-container .biz-container #biz-btn-back {
@@ -53,7 +57,7 @@ html .app-container .biz-container .biz-info, body .app-container .biz-container
 
 html .app-container .biz-container .biz-info .biz-image, body .app-container .biz-container .biz-info .biz-image {
   width: 450px;
-  height: 50%;
+  max-height: 300px;
   background: transparent no-repeat center;
   background-size: cover;
   vertical-align: middle;
@@ -61,11 +65,16 @@ html .app-container .biz-container .biz-info .biz-image, body .app-container .bi
 }
 
 html .app-container .biz-container .biz-info .biz-name, body .app-container .biz-container .biz-info .biz-name {
+  color: black;
   padding: 1rem;
   font-size: 1.5rem;
   word-wrap: break-word;
   text-decoration: none;
   font-weight: 600;
+}
+
+html .app-container .biz-container .biz-info .biz-name:hover, body .app-container .biz-container .biz-info .biz-name:hover {
+  color: #6e8efb;
 }
 
 html .app-container .biz-container .biz-info .biz-details, body .app-container .biz-container .biz-info .biz-details {
@@ -106,6 +115,6 @@ html .footer-container a:visited, body .footer-container a:visited {
 }
 
 html .footer-container a:hover, body .footer-container a:hover {
-  color: #a777e3;
+  color: #7c99fb;
 }
 /*# sourceMappingURL=styles.css.map */

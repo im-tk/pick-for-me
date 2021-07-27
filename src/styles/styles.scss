@@ -2,7 +2,7 @@
 
 $colors: (
   primary: #6e8efb,
-  secondary: #a777e3
+  secondary: #7c99fb 
 );
 
 @function getColor($color) {
@@ -19,23 +19,28 @@ html, body {
     width: 100%;
 
     .biz-container {
-        font-size: 1rem;
-        background: skyblue; //remove later
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+      font-size: 1rem;
+      //background: skyblue; //remove later
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      height: 500px;
 
       .biz-btn {
-        background: linear-gradient(135deg, getColor(primary), getColor(secondary));
+        background: getColor(primary); //background: linear-gradient(135deg, getColor(primary), getColor(secondary));
         border: none;
         color: white;
         padding: 15px 32px;
-        height: 500px;
+        height: 100%;
         text-align: center;
         text-decoration: none;
         font-size: 16px;
         margin: 0; 
         cursor: pointer;
+
+        &:hover{
+          background: getColor(secondary);
+        }
       }
 
       #biz-btn-back {
@@ -52,7 +57,7 @@ html, body {
 
         .biz-image {
           width: 450px;
-          height: 50%;
+          max-height: 300px;
           background: transparent no-repeat center;
           background-size: cover;
           vertical-align: middle;
@@ -60,11 +65,16 @@ html, body {
         }
 
         .biz-name {
+          color: black;
           padding: 1rem;
           font-size: 1.5rem;
           word-wrap: break-word;
           text-decoration: none;
           font-weight: 600;
+
+          &:hover {
+            color: getColor(primary);
+          }
         }
 
         .biz-details {
