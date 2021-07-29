@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Business } from './components/Business';
-import Header from './components/Header';
+//import Header from './components/Header';
 import Footer from './components/Footer';
 import Map from './components/Map';
 import yelpSearch from './util/yelpSearch';
@@ -54,7 +54,6 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <Header>pick for me</Header>
         <Business business={ this.state.businesses[this.state.count] } buttonBack={ this.buttonBack } buttonNext={ this.buttonNext }/>
         <Map origin={{ lat: this.state.userLatitude, lng: this.state.userLongitude }} business={ this.state.businesses[this.state.count] } />
         <Footer />

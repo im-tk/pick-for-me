@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 $colors: (
   primary: #6e8efb,
@@ -16,28 +16,42 @@ html, body {
   font-family: 'Montserrat', Arial, sans-serif;
 
   .app-container {
-    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 
     .biz-container {
       z-index: 10;
       position: absolute;
       font-size: 1rem;
       display: flex;
-      flex-direction: row;
-      justify-content: center;
-      height: 500px;
+      flex-direction: column;
+      width: 500px;
+      height: 400px;
+      background: white;
+      border-radius: 0 0 13px 0;
+
+      .biz-btn-row {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .biz-btn-divider {
+        width: 1px;
+        background-color: white;
+      }
 
       .biz-btn {
         background: getColor(primary); //background: linear-gradient(135deg, getColor(primary), getColor(secondary));
         border: none;
         color: white;
         padding: 15px 32px;
-        height: 100%;
         text-align: center;
         text-decoration: none;
         font-size: 16px;
         margin: 0; 
         cursor: pointer;
+        flex: 1;
 
         &:hover{
           background: getColor(secondary);
@@ -45,66 +59,61 @@ html, body {
       }
 
       #biz-btn-back {
-        border-radius: 13px 0 0 13px;
+        border-radius: 0;
       }
 
       #biz-btn-next {
-        border-radius: 0 13px 13px 0;
+        border-radius: 0 0 13px 0;
       }
 
-      .biz-info {
-        margin: 0;
-        width: 450px;
-        background: white; 
+      .biz-image {
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+        vertical-align: middle;
+        padding: 0 0 0.5rem 0;
+      }
 
-        .biz-image {
-          width: 450px;
-          max-height: 300px;
-          background: transparent no-repeat center;
-          background-size: cover;
-          vertical-align: middle;
-          padding: 0 0 1rem;
+      .biz-name {
+        color: black;
+        padding: 0 1rem;
+        font-size: 1.5rem;
+        word-wrap: break-word;
+        text-decoration: none;
+        font-weight: 600;
+        display: block;
+
+        &:hover {
+          color: getColor(primary);
         }
+      }
 
-        .biz-name {
-          color: black;
-          padding: 1rem;
-          font-size: 1.5rem;
-          word-wrap: break-word;
-          text-decoration: none;
-          font-weight: 600;
-
-          &:hover {
-            color: getColor(primary);
-          }
-        }
-
-        .biz-details {
-          padding: 1rem;
-        }
+      .biz-details {
+        height: auto;
+        padding: 0.5rem 1rem;
+        background: white;
       }
     }
   }
 
-  .header-container {
-    margin: 0;
-    padding: 0 2rem;
-    font-size: 1rem;
-    font-family: 'Roboto Slab', Garamond, serif;
+  .map-container {
+    height: 96vh;
+    min-height: 96vh;
   }
-
+  
   .footer-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex: 1 0 auto;
+    flex-shrink: 0;
+    height: 1rem;
     margin: 0;
-    padding: 10px;
+    padding: 1rem;
     font-size: 0.8rem;
+    text-align: center;
+    background-color: white;
 
     a { 
       text-decoration: none;
       color:getColor(primary);
-      font-weight: 700;
 
       &:visited {
         color:getColor(primary);

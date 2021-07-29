@@ -4,7 +4,7 @@ class Footer extends Component {
   render() {
     return (
       <div className="footer-container">
-          <span>created by <a href="http://github.com/im-tk" target="_window">@im-tk</a></span>
+          <span><b>pick for me</b> created by <a href="http://github.com/im-tk" target="_window"><b>@im-tk</b></a></span>
       </div>
     );
   }

@@ -6,7 +6,7 @@ function degreesToRadians(degrees) {
 
 function convertToMiles(km) {
   let miles = (km * 0.62137).toFixed(1); //1km is equivalent to 0.6214 miles.
-  return (miles % 1 != 0 ?  miles : Math.round(miles));
+  return (Math.ceil(miles));
 }
 
 const getDistance = (lat1, lon1, lat2, lon2) => {

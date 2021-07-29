@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const styles = {
-  height: '100vh',
-  minHeight: '100vh',
+  height: '100%',
 }
 
 class Map extends Component {
