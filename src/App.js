@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Business } from './components/Business';
-//import Header from './components/Header';
 import Footer from './components/Footer';
 import Map from './components/Map';
 import yelpSearch from './util/yelpSearch';
@@ -31,7 +30,7 @@ class App extends Component {
   /* Requests Geolocation from user */
   async position() {
     await navigator.geolocation.getCurrentPosition(position => {
-      console.log("Received Geolocation");
+      //console.log("Received Geolocation");
       this.setState({userLatitude: position.coords.latitude})
       this.setState({userLongitude: position.coords.longitude})
 

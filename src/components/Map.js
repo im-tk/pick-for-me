@@ -18,14 +18,13 @@ class Map extends Component {
 
   render() {
     if(this.props.business != null) {
-      console.log("this.props.origin.lat: " + this.props.origin.lat);
       return (
         <div className="map-container">
           <LoadScript googleMapsApiKey={ process.env.REACT_APP_GOOGLE_API_KEY }>
             <GoogleMap
               mapContainerStyle={ styles }
               center={ getMidpoint(this.props.origin.lat, this.props.origin.lng, this.props.business.coordinates.latitude, this.props.business.coordinates.longitude) }
-              zoom={ 14 }
+              zoom={ 13 }
               zoomOnClick={ false }
               onLoad={ map => {console.log('DirectionsRenderer onLoad map: ', map)}}
               onUnmount= {map => {console.log('DirectionsRenderer onUnmount map: ', map)}}>

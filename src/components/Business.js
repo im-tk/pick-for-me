@@ -12,12 +12,17 @@ export class Business extends Component {
     return(price == undefined ? '' : " " + dot + " " + price); //only show price if there's a valid value
   }
 
+  hasImage(image){
+    console.log("IMAGE @@@@@@@@@ "+ image);
+    return(image == '' ? "Image unavailable." : "Image of food from " + this.props.business.name);
+  }
+
   render() {
     /* Renders business info */
     if(this.props.business != null) {
       return (
         <div className="biz-container">
-          <img className="biz-image" src={ this.props.business.imageSRC } alt=''/>
+          <img className="biz-image" src={ this.props.business.imageSRC } alt={this.hasImage(this.props.business.imageSRC)} />
             <div className="biz-details">
               <a className="biz-name" href={ this.props.business.url } target="_blank" >{ this.props.business.name }</a>
               <span>
