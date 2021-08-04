@@ -20,6 +20,14 @@ html .app-container, body .app-container {
           justify-content: flex-start;
 }
 
+@media (max-width: 480px) {
+  html .app-container, body .app-container {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
 .biz-container {
   z-index: 10;
   position: absolute;
@@ -35,6 +43,14 @@ html .app-container, body .app-container {
   height: 360px;
   border-radius: 0 0 13px 0;
   background-color: #7c99fb;
+}
+
+@media (max-width: 480px) {
+  .biz-container {
+    width: 100%;
+    height: 40%;
+    border-radius: 0;
+  }
 }
 
 .biz-container .biz-btn-row {
@@ -133,6 +149,12 @@ html .app-container, body .app-container {
 
 .map-container {
   height: 100vh;
+}
+
+@media (max-width: 480px) {
+  .map-container {
+    height: 60%;
+  }
 }
 
 .footer-container {
