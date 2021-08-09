@@ -4,17 +4,12 @@ import Button from './Button';
 const dot = String.fromCharCode(8901);
 
 export class Business extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   priceToString(price) {
-    return(price == undefined ? '' : " " + dot + " " + price); //only show price if there's a valid value
+    return(price === undefined ? '' : " " + dot + " " + price); //only show price if there's a valid value
   }
 
   hasImage(image){
-    console.log("IMAGE @@@@@@@@@ "+ image);
-    return(image == '' ? "Image unavailable." : "Image of food from " + this.props.business.name);
+    return(image === '' ? "Image unavailable." : "Image of food from " + this.props.business.name);
   }
 
   render() {
@@ -24,7 +19,7 @@ export class Business extends Component {
         <div className="biz-container">
           <img className="biz-image" src={ this.props.business.imageSRC } alt={this.hasImage(this.props.business.imageSRC)} />
             <div className="biz-details">
-              <a className="biz-name" href={ this.props.business.url } target="_blank" >{ this.props.business.name }</a>
+              <a className="biz-name" href={ this.props.business.url } target="_blank" rel="noopener noreferrer">{ this.props.business.name }</a>
               <span>
                 { this.props.business.category[0].title} { this.priceToString(this.props.business.price) } <br />
               </span>

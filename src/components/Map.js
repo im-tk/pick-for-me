@@ -25,12 +25,10 @@ class Map extends Component {
               mapContainerStyle={ styles }
               center={ getMidpoint(this.props.origin.lat, this.props.origin.lng, this.props.business.coordinates.latitude, this.props.business.coordinates.longitude) }
               zoom={ 13 }
-              zoomOnClick={ false }
-              onLoad={ map => {console.log('DirectionsRenderer onLoad map: ', map)}}
-              onUnmount= {map => {console.log('DirectionsRenderer onUnmount map: ', map)}}>
+              zoomOnClick={ false }>
 
-              <Marker position={ this.props.origin }/>
-              <Marker position={{ lat: this.props.business.coordinates.latitude, lng: this.props.business.coordinates.longitude }}/>
+              <Marker position={ this.props.origin } animation={ 2 } />
+              <Marker position={{ lat: this.props.business.coordinates.latitude, lng: this.props.business.coordinates.longitude }} animation={ 2 } />
             </GoogleMap>
           </LoadScript>
         </div>
