@@ -20,7 +20,7 @@ html .app-container, body .app-container {
           justify-content: flex-start;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768) {
   html .app-container, body .app-container {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -45,7 +45,7 @@ html .app-container, body .app-container {
   background-color: #7c99fb;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768) {
   .biz-container {
     width: 100%;
     height: 40%;
@@ -151,7 +151,7 @@ html .app-container, body .app-container {
   height: 100vh;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768) {
   .map-container {
     height: 60%;
   }
@@ -172,10 +172,10 @@ html .app-container, body .app-container {
 }
 
 .footer-container a:visited {
-  color: #6e8efb;
+  color: black;
 }
 
 .footer-container a:hover {
-  color: #7c99fb;
+  color: #6e8efb;
 }
 /*# sourceMappingURL=styles.css.map */
