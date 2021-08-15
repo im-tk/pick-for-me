@@ -16,13 +16,6 @@ $mobile: 480px;
   }
 }
 
-$tablet: 768;
-@mixin mobile {
-  @media (max-width: #{$tablet}) {
-    @content;
-  }
-}
-
 html, body {
   margin: 0;
   padding: 0px;
@@ -143,6 +136,26 @@ html, body {
   height: 100vh;
   @include mobile() {
     height: 60%;
+  }
+}
+
+.default-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+
+  .default-message {
+    margin: 0;
+    padding: 5rem;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 1.75rem;
+    text-align: center;
+
+    @include mobile() {
+      font-size: 1.5rem;
+    }
   }
 }
 

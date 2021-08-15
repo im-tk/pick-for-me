@@ -20,7 +20,7 @@ html .app-container, body .app-container {
           justify-content: flex-start;
 }
 
-@media (max-width: 768) {
+@media (max-width: 480px) {
   html .app-container, body .app-container {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -45,7 +45,7 @@ html .app-container, body .app-container {
   background-color: #7c99fb;
 }
 
-@media (max-width: 768) {
+@media (max-width: 480px) {
   .biz-container {
     width: 100%;
     height: 40%;
@@ -151,9 +151,37 @@ html .app-container, body .app-container {
   height: 100vh;
 }
 
-@media (max-width: 768) {
+@media (max-width: 480px) {
   .map-container {
     height: 60%;
+  }
+}
+
+.default-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.default-container .default-message {
+  margin: 0;
+  padding: 5rem;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .default-container .default-message {
+    font-size: 1.5rem;
   }
 }
 
