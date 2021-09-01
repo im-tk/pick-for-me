@@ -1,4 +1,8 @@
-# How to run Pick For Me
+# About Pick For Me
+
+Interactive react application that finds restaurants within a 10 mile radius based on user’s geolocation. Pick For Me suggests a random business from that list and displays relevant information. Uses Yelp Fusion and Google API.
+
+# How to run app
 
 1. Download this repository
 2. In the root directory, add your Yelp and Google API keys to the `.env` file
