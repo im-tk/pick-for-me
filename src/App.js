@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { Business } from './components/Business';
-import Footer from './components/Footer';
-import Map from './components/Map';
-import DefaultPage from './components/DefaultPage';
-import yelpSearch from './util/yelpSearch';
-import shuffleArray from './util/shuffleArray';
-import nextArrayItem from './util/nextArrayItem';
-import prevArrayItem from './util/prevArrayItem';
-import './styles/styles.css';
+import React, { Component } from "react";
+import { Business } from "./components/Business";
+import Footer from "./components/Footer";
+import Map from "./components/Map";
+import DefaultPage from "./components/DefaultPage";
+import yelpSearch from "./util/yelpSearch";
+import shuffleArray from "./util/shuffleArray";
+import nextArrayItem from "./util/nextArrayItem";
+import prevArrayItem from "./util/prevArrayItem";
+import "./styles/styles.css";
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class App extends Component {
       count: 0,
       userCoords: null,
       userLatitude: null,
-      userLongitude: null
+      userLongitude: null,
     };
     this.position = this.position.bind(this);
     this.buttonNext = this.buttonNext.bind(this);
@@ -31,41 +31,67 @@ class App extends Component {
 
   /* Requests Geolocation from user */
   async position() {
-    await navigator.geolocation.getCurrentPosition(position => {
-      //console.log("Received Geolocation");
-      this.setState({geolocationAvail: true})
-      this.setState({userLatitude: position.coords.latitude})
-      this.setState({userLongitude: position.coords.longitude})
+    await navigator.geolocation.getCurrentPosition(
+      (position) => {
+        //console.log("Received Geolocation");
+        console.log(position.coords.latitude, position.coords.longitude);
+        this.setState({ geolocationAvail: true });
+        this.setState({ userLatitude: position.coords.latitude });
+        this.setState({ userLongitude: position.coords.longitude });
 
-      yelpSearch(this.state.userLatitude, this.state.userLongitude).then(businesses => {
-        this.setState({businesses: shuffleArray(businesses)});
-      });
-    }, function (error) {
-      console.log(error);
-    })
+        yelpSearch(this.state.userLatitude, this.state.userLongitude)
+          .then((businesses) => {
+            console.log("businesses", businesses);
+            if (businesses === undefined) {
+              this.setState({ geolocationAvail: false });
+            } else {
+              this.setState({ businesses: shuffleArray(businesses) });
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
+      function (error) {
+        console.log(error);
+      }
+    );
   }
 
   /* Updates counter to go to the next index in the businesses[] array */
   buttonNext() {
-    this.setState({count: nextArrayItem(this.state.count, this.state.businesses.length)});
+    this.setState({
+      count: nextArrayItem(this.state.count, this.state.businesses.length),
+    });
   }
 
   /* Updates counter to go to the previous index in the businesses[] array */
   buttonBack() {
-    this.setState({count: prevArrayItem(this.state.count, this.state.businesses.length)});
+    this.setState({
+      count: prevArrayItem(this.state.count, this.state.businesses.length),
+    });
   }
 
   render() {
     if (this.state.geolocationAvail == true) {
       return (
         <div className="app-container">
-          <Business business={ this.state.businesses[this.state.count] } buttonBack={ this.buttonBack } buttonNext={ this.buttonNext }/>
-          <Map origin={{ lat: this.state.userLatitude, lng: this.state.userLongitude }} business={ this.state.businesses[this.state.count] } />
+          <Business
+            business={this.state.businesses[this.state.count]}
+            buttonBack={this.buttonBack}
+            buttonNext={this.buttonNext}
+          />
+          <Map
+            origin={{
+              lat: this.state.userLatitude,
+              lng: this.state.userLongitude,
+            }}
+            business={this.state.businesses[this.state.count]}
+          />
           <Footer />
         </div>
       );
-    }
-    else {
+    } else {
       return (
         <div className="app-container">
           <DefaultPage />
