@@ -16,12 +16,8 @@ async function yelpSearch(latitude, longitude) {
   config.url = baseURL + "&latitude=" + latitude + "&longitude=" + longitude;
   return axios(config)
     .then((response) => {
-      return response.data;
-    })
-    .then((data) => {
-      console.log("data", data);
+      const data = response.data;
       if (data.businesses) {
-        console.log("hey");
         return data.businesses.map((business) => {
           return {
             id: business.id,
